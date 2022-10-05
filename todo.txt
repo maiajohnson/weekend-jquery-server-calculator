@@ -1,0 +1,17 @@
+[ ] When = button is clicked:
+    [ ] capture two input values
+    [ ] capture type of mathematical operation
+    [ ] compress into an object
+    [ ] send to server via POST
+    [ ] add C button to clear input fields
+
+[ ] Handle computation on server side
+    [ ] once done, send back okay
+
+[ ] Use GET request to get the calculation from server
+
+[ ] Keep record of all operations
+    [ ] display list on the page (using GET request)
+    [ ] update list when new calculation is made
+
+
