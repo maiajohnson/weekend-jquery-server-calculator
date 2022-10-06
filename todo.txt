@@ -1,9 +1,10 @@
-[ ] When = button is clicked:
-    [ ] capture two input values
-    [ ] capture type of mathematical operation
-    [ ] compress into an object
-    [ ] send to server via POST
-    [ ] add C button to clear input fields
+[X] When = button is clicked:
+    [X] capture two input values
+    [X] capture type of mathematical operation
+    [X] compress into an object
+    [X] send to server via POST
+
+[ ] add C button to clear input fields
 
 [ ] Handle computation on server side
     [ ] once done, send back okay
