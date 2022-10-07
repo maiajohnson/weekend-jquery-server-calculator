@@ -1,9 +1,21 @@
-# Project Name
-
-[Project Instructions](./INSTRUCTIONS.md), this line may be removed once you have updated the README.md
+# Weekend Jquery Server Calculator
 
 ## Description
 
-Your project description goes here. What problem did you solve? How did you solve it?
+_Duration: 4 days_
 
-Additional README details can be found [here](https://github.com/PrimeAcademy/readme-template/blob/master/README.md).
+This repo is designed to take in two input values, and complete a math operation using them. The equation will be computed on the server, and the result will be sent back. The application will also keep a history of all of the equations done, shown on screen, as well as the total of the current equation. Additionally, there will be a C button needed that will clear the input fields.
+
+### Prerequisites
+
+- Node.js
+
+## Built With
+
+- Express
+- Javascript
+- HTML
+
+## Acknowledgement
+
+Thanks to [Prime Digital Academy](www.primeacademy.io) who equipped and helped me to make this application a reality.
