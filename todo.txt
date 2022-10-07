@@ -9,7 +9,7 @@
 [ ] Handle computation on server side
     [ ] once done, send back okay
 
-[ ] Use GET request to get the calculation from server
+[X] Use GET request to get the calculation from server
 
 [ ] Keep record of all operations
     [ ] display list on the page (using GET request)

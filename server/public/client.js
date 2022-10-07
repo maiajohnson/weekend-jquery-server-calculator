@@ -6,7 +6,7 @@ function onReady() {
     console.log('in jquery');
 
     $('#equals').on('click', onInput);
-    // $('#equals').on('click', onOutput);
+    $('#equals').on('click', onOutput);
 }
 
 function onInput(evt) {
@@ -15,7 +15,7 @@ function onInput(evt) {
     let inputValues = {
         first: $('#num1').val(),
         second: $('#num2').val(),
-        // operator: $('.math').click(e => e.preventDefault())
+        operator: $('.math').on('click')
     };
 
     console.log('in onCalculate', inputValues);
@@ -48,5 +48,27 @@ function onOutput(evt) {
             console.log('GET output', response);
 
             equations = response;
+            render();
+        })
+        .catch((err) => {
+            console.log('GET output error', err);
         })
 };
+
+function render() {
+    $('.total').empty();
+
+    for (let i=0; i < equations.length; i++) {
+        $('.total').append(`
+           ${result}
+        `)
+    };
+
+    $('ul').empty();
+
+    for (let i=0; i < equations.length; i++) {
+        $('ul').append(`
+            <li>${first} `$('.math').text()` ${second} = ${result}</li>
+        `)
+    };
+}
