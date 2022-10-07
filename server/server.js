@@ -23,22 +23,28 @@ app.post('/input', (req, res) => {
     res.sendStatus(201);
 });
 
-function doMath() {
-    let result;
+// function doMath() {
+//     let result;
 
-    if ($('#add').on('click')) {
-        result = first + second;
-        return result;
-    } else if ($('#subtract').on('click')) {
-        result = first - second;
-        return result;
-    } else if ($('#multiply').on('click')) {
-        result = first * second;
-        return result;
-    } else if ($('#divide').on('click')) {
-        result = first / second;
-        return result;
-    }
-}
+//     if ($('#add').on('click')) {
+//         result = first + second;
+//         return result;
+//     } else if ($('#subtract').on('click')) {
+//         result = first - second;
+//         return result;
+//     } else if ($('#multiply').on('click')) {
+//         result = first * second;
+//         return result;
+//     } else if ($('#divide').on('click')) {
+//         result = first / second;
+//         return result;
+//     }
+// }
 
-app.get
+app.get('/output', (req, res) => {
+    console.log('in GET input');
+
+    // doMath();
+    // equations.push(result);
+    res.send(equations);
+})
