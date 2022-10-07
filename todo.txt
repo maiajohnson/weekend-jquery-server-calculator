@@ -6,13 +6,13 @@
 
 [ ] add C button to clear input fields
 
-[ ] Handle computation on server side
-    [ ] once done, send back okay
+[X] Handle computation on server side
+    [X] once done, send back okay
 
 [X] Use GET request to get the calculation from server
 
-[ ] Keep record of all operations
-    [ ] display list on the page (using GET request)
-    [ ] update list when new calculation is made
+[X] Keep record of all operations
+    [X] display list on the page (using GET request)
+    [X] update list when new calculation is made
 
 

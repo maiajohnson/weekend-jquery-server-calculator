@@ -7,6 +7,7 @@ function onReady() {
 
     $('#equals').on('click', onInput);
     $('#equals').on('click', onOutput);
+    $('#clear').on('click', onClear);
 }
 
 function onInput(evt) {
@@ -34,9 +35,8 @@ function onInput(evt) {
             console.log('POST inputValues error', err);
         })
     
-    $('#num1').val('');
-    $('#num2').val('');
-}
+      
+    };
 
 function onOutput(evt) {
     evt.preventDefault();
@@ -54,6 +54,14 @@ function onOutput(evt) {
         .catch((err) => {
             console.log('GET output error', err);
         })
+};
+
+function onClear(evt) {
+    evt.preventDefault();
+
+    $('#num1').val('');
+    $('#num2').val('');
+
 };
 
 function render() {
