@@ -16,6 +16,7 @@ function onInput(evt) {
         first: $('#num1').val(),
         second: $('#num2').val(),
         operator: $('.math').on('click')
+        // keeps returning null value, but I'm unsure how to fix it
     };
 
     console.log('in onCalculate', inputValues);
