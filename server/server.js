@@ -25,16 +25,16 @@ app.post('/input', (req, res) => {
 function doMath(math) {
     console.log(math.symbol);
 
-   if (math.symbol = '+') {
+   if (math.symbol === '+') {
     math.answer = Number(math.first) + Number(math.second);
    }
-   else if (math.symbol = '-') {
+   else if (math.symbol === '-') {
     math.answer = Number(math.first) - Number(math.second);
    }
-   else if (math.symbol = '*') {
+   else if (math.symbol === '*') {
     math.answer = Number(math.first) * Number(math.second);
    }
-   else if (math.symbol = '/') {
+   else if (math.symbol === '/') {
     math.answer = Number(math.first) / Number(math.second);
    };
 
