@@ -17,36 +17,32 @@ app.listen(PORT, () => {
 app.post('/input', (req, res) => {
     console.log('inputvalues', req.body);
 
-    equations.push(req.body);
-    console.log('the values are now:', equations);
-
+    doMath(req.body);
+    console.log('the equations are now', equations);
     res.sendStatus(201);
 });
 
-function doMath() {
-    let result;
-    let first = $('#num1').val();
-    let second = $('#num2').val();
+function doMath(math) {
+    console.log(math.symbol);
 
-    if ($('#add').on('click')) {
-        result = first + second;
-        return result;
-    } else if ($('#subtract').on('click')) {
-        result = first - second;
-        return result;
-    } else if ($('#multiply').on('click')) {
-        result = first * second;
-        return result;
-    } else if ($('#divide').on('click')) {
-        result = first / second;
-        return result;
-    }
+   if (math.symbol = '+') {
+    math.answer = Number(math.first) + Number(math.second);
+   }
+   else if (math.symbol = '-') {
+    math.answer = Number(math.first) - Number(math.second);
+   }
+   else if (math.symbol = '*') {
+    math.answer = Number(math.first) * Number(math.second);
+   }
+   else if (math.symbol = '/') {
+    math.answer = Number(math.first) / Number(math.second);
+   };
+
+   equations.push(math);
 }
 
 app.get('/output', (req, res) => {
     console.log('in GET input');
 
-    doMath();
-    equations.push(result);
     res.send(equations);
 })

@@ -1,13 +1,14 @@
 $(document).ready(onReady);
 
 let equations = [];
+let operator;
 
 function onReady() {
     console.log('in jquery');
 
     $('#equals').on('click', onInput);
-    $('#equals').on('click', onOutput);
     $('#clear').on('click', onClear);
+    $('.math').on('click', getOperator);
 }
 
 function onInput(evt) {
@@ -16,8 +17,7 @@ function onInput(evt) {
     let inputValues = {
         first: $('#num1').val(),
         second: $('#num2').val(),
-        operator: $('.math').on('click')
-        // keeps returning null value, but I'm unsure how to fix it
+        symbol: operator
     };
 
     console.log('in onCalculate', inputValues);
@@ -29,6 +29,7 @@ function onInput(evt) {
     })
         .then(response => {
             console.log('POST inputValues', response);
+            onOutput();
         })
 
         .catch((err) => {
@@ -38,8 +39,13 @@ function onInput(evt) {
       
     };
 
-function onOutput(evt) {
-    evt.preventDefault();
+function getOperator() {
+    console.log($(this).text());
+
+    operator = $(this).text();
+}
+
+function onOutput() {
 
     $.ajax({
         url: '/output',
@@ -49,35 +55,34 @@ function onOutput(evt) {
             console.log('GET output', response);
 
             equations = response;
-            render();
+            render(equations);
         })
         .catch((err) => {
             console.log('GET output error', err);
         })
 };
 
-function onClear(evt) {
-    evt.preventDefault();
+function onClear() {
 
     $('#num1').val('');
     $('#num2').val('');
 
 };
 
-function render() {
+function render(equations) {
     $('.total').empty();
-
-    for (let i=0; i < equations.length; i++) {
-        $('.total').append(`
-           ${result}
-        `)
-    };
-
     $('ul').empty();
 
     for (let i=0; i < equations.length; i++) {
+         $('.total').empty();
+        $('.total').append(`
+           ${equations[i].answer}
+        `)
+    };
+
+    for (let i=0; i < equations.length; i++) {
         $('ul').append(`
-            <li>${first} `$('.math').text()` ${second} = ${result}</li>
+            <li>${equations[i].first} ${equations[i].symbol} ${equations[i].second} = ${equations[i].answer}</li>
         `)
     };
 }
